@@ -1,4 +1,5 @@
 import discord
+from reddit import get_reddit_post
 from secrets import TOKEN
 
 client = discord.Client()
@@ -13,6 +14,7 @@ async def on_message(message):
         return
 
     if message.content.startswith('meme pls'):
-        await message.channel.send('Hier sollte ein Meme stehen.')
+        url = get_reddit_post()
+        await message.channel.send(url)
 
 client.run(TOKEN)
