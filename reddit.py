@@ -9,10 +9,10 @@ def get_reddit_post():
 
     def get_reddit(subreddit,count):
         try:
-            base_url = f'https://www.reddit.com/r/{subreddit}/{listing}.json?count={count}&t={timeframe}'
-            request = requests.get(base_url, headers = {'User-agent': 'yourbot'})
+            base_url = f'https://www.reddit.com/r/{subreddit}/{listing}.json'
+            request = requests.get(base_url, headers = {'User-agent': 'yourbot'}, params = {'count': count, 't': timeframe})
         except:
-            print('An Error Occured')
+            print('An Error Occurred')
         return request.json()
 
     top_post = get_reddit(subreddit,count)
