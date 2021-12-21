@@ -1,6 +1,9 @@
 import discord
+import logging
 from reddit import get_reddit_post
 from secrets import TOKEN
+
+logging.basicConfig(level=logging.INFO)
 
 client = discord.Client()
 
